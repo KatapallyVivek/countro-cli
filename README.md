@@ -1,4 +1,4 @@
-# counter-cli 
+# countro-cli 
 
 A lightweight Node.js CLI tool for file operations including create, read, append, delete, and word/line counting.
 
@@ -17,20 +17,14 @@ A lightweight Node.js CLI tool for file operations including create, read, appen
 
 ##  Installation
 
-### 1. Clone the repository
+### Install globally using npm:
 ```bash
-git clone https://github.com/KatapallyVivek/counter-cli.git
-cd counter-cli
+npm install -g countro
 ```
-### 2. Install dependencies
+or 
 ```bash
-npm install
+npm i -g countro
 ```
-### 3. Link CLI globally
-```bash
-npm link
-```
-
 ---
 
 ## Usage (Few commands)
