@@ -1,15 +1,15 @@
 {
-  "name": "counter",
-  "version": "1.0.0",
+  "name": "countro",
+  "version": "1.0.1",
   "description": "Simple CLI counter tool",
   "main": "index.js",
   "bin": {
-    "counter": "./cli.js"
+    "countro": "cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-   "keywords": [
+  "keywords": [
     "cli",
     "counter",
     "node"
