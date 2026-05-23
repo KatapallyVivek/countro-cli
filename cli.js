@@ -8,7 +8,7 @@ const program = new Command();
 program
     .name("countro")
     .description("CLI for file-based tasks")
-    .version("1.0.1");
+    .version("1.0.2");
 
 
 // Create
