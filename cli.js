@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const { Command } = require("commander");
-const { default: chalk } = require("chalk");
+const chalk = require("chalk");
 
 const program = new Command();
 
