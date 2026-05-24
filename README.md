@@ -30,27 +30,27 @@ npm i -g countro
 ## Usage (Few commands)
 ### Create a file
 ```bash
-counter create file.txt
+countro create file.txt
 # alias
-counter cr file.txt
+countro cr file.txt
 ```
 
 ### Append text
 ```bash
-counter add file.txt Hello world from CLI
+countro add file.txt Hello world from CLI
 ```
 
 ### Show file content
 ```bash
-counter show file.txt
+countro show file.txt
 # alias
-counter sh file.txt
+countro sh file.txt
 ```
 
 ### For all commands, help and version. run 
 ```bash
-counter --help or counter -h
-counter -V
+countro --help or countro -h
+countro -V
 ```
 ---
 ## Tech Stack 
@@ -73,8 +73,8 @@ Contributions are welcome!
 1. Fork the repository  
 2. Clone your fork  
    ```bash
-   git clone https://github.com/<your-username>/counter-cli.git
-   cd counter-cli
+   git clone https://github.com/KatapallyVivek/countro-cli.git
+   cd countro-cli
 3. Create a new branch
    ```bash
    git checkout -b feature/your-feature
@@ -82,7 +82,7 @@ Contributions are welcome!
    ```bash
    npm install
    npm link
-   counter --help
+   countro --help
 5. Commit your changes
    ```bash
    git commit -m "feat: add your feature"
