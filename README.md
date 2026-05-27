@@ -1,4 +1,9 @@
 # countro-cli 
+![npm version](https://img.shields.io/npm/v/countro)
+![Node.js](https://img.shields.io/badge/node-%3E%3D14-green)
+![License](https://img.shields.io/badge/license-ISC-blue)
+![CLI Tool](https://img.shields.io/badge/CLI-Tool-orange)
+![Status](https://img.shields.io/badge/status-active-success)
 
 A lightweight Node.js CLI tool for file operations including create, read, append, delete, and word/line counting.
 
@@ -33,6 +38,31 @@ npm i -g countro
 countro create file.txt
 # alias
 countro cr file.txt
+```
+
+### delete a file
+```bash
+countro delete file.txt
+# alias
+countro dl file.txt
+```
+
+## Multiple File Support
+
+### Create multiple files:
+```bash
+countro create a.txt b.txt c.txt
+# alias
+```bash
+countro cr a.txt b.txt c.txt
+```
+
+### Delete multiple files:
+```bash
+countro delete a.txt b.txt c.txt
+# alias
+```bash
+countro dl a.txt b.txt c.txt
 ```
 
 ### Append text
@@ -75,6 +105,7 @@ Contributions are welcome!
    ```bash
    git clone https://github.com/KatapallyVivek/countro-cli.git
    cd countro-cli
+   ```
 3. Create a new branch
    ```bash
    git checkout -b feature/your-feature
