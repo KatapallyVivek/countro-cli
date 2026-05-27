@@ -1,4 +1,9 @@
 # countro-cli 
+![npm version](https://img.shields.io/npm/v/countro)
+![Node.js](https://img.shields.io/badge/node-%3E%3D14-green)
+![License](https://img.shields.io/badge/license-ISC-blue)
+![CLI Tool](https://img.shields.io/badge/CLI-Tool-orange)
+![Status](https://img.shields.io/badge/status-active-success)
 
 A lightweight Node.js CLI tool for file operations including create, read, append, delete, and word/line counting.
 
@@ -100,6 +105,7 @@ Contributions are welcome!
    ```bash
    git clone https://github.com/KatapallyVivek/countro-cli.git
    cd countro-cli
+   ```
 3. Create a new branch
    ```bash
    git checkout -b feature/your-feature
