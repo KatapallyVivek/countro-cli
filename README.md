@@ -53,7 +53,6 @@ countro dl file.txt
 ```bash
 countro create a.txt b.txt c.txt
 # alias
-```bash
 countro cr a.txt b.txt c.txt
 ```
 
@@ -61,13 +60,12 @@ countro cr a.txt b.txt c.txt
 ```bash
 countro delete a.txt b.txt c.txt
 # alias
-```bash
 countro dl a.txt b.txt c.txt
 ```
 
 ### Append text
 ```bash
-countro add file.txt Hello world from CLI
+countro add file.txt "Hello world from CLI"
 ```
 
 ### Show file content
@@ -127,22 +125,5 @@ Contributions are welcome!
 - Use meaningful commit messages
 - Avoid breaking existing functionality
 - Also avoid submitting pull requests that only make trivial changes (such as minor README edits) without improving functionality or usability
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
