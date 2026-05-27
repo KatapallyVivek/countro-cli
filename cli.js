@@ -8,7 +8,7 @@ const program = new Command();
 program
     .name("countro")
     .description("CLI for file-based tasks")
-    .version("1.0.2");
+    .version("1.1.2");
 
 
 // Create
@@ -16,8 +16,9 @@ program
     .command("create")
     .alias("cr")
     .description("Create a new file")
-    .argument("<file>", "file to create")
-    .action((fileName) => {
+    .argument("<file...>", "file to create")
+    .action((files) => {
+        files.forEach((fileName) => {
         if (fs.existsSync(fileName)) {
             console.log(chalk.yellow(`File ${fileName} already exists`));
             return;
@@ -30,6 +31,7 @@ program
             }
             console.log("\n" + chalk.green(`✔ File ${fileName} created`) + "\n");
         });
+        });
     });
 
 
@@ -38,8 +40,9 @@ program
     .command("delete")
     .alias("dl")
     .description("Delete an existing file")
-    .argument("<file>", "file to delete")
-    .action((fileName) => {
+    .argument("<file...>", "file to delete")
+    .action((files) => {
+        files.forEach((fileName) => {
         if (!fs.existsSync(fileName)) {
             console.log(chalk.yellow(`File ${fileName} does not exist`));
             return;
@@ -51,6 +54,7 @@ program
                 return;
             }
             console.log("\n" + chalk.green(`✔ File ${fileName} deleted`) + "\n");
+        });
         });
     });
 

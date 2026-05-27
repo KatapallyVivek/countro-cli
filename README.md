@@ -35,6 +35,31 @@ countro create file.txt
 countro cr file.txt
 ```
 
+### delete a file
+```bash
+countro delete file.txt
+# alias
+countro dl file.txt
+```
+
+## Multiple File Support
+
+### Create multiple files:
+```bash
+countro create a.txt b.txt c.txt
+# alias
+```bash
+countro cr a.txt b.txt c.txt
+```
+
+### Delete multiple files:
+```bash
+countro delete a.txt b.txt c.txt
+# alias
+```bash
+countro dl a.txt b.txt c.txt
+```
+
 ### Append text
 ```bash
 countro add file.txt Hello world from CLI
