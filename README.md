@@ -53,6 +53,7 @@ countro dl file.txt
 ```bash
 countro create a.txt b.txt c.txt
 # alias
+```bash
 countro cr a.txt b.txt c.txt
 ```
 
@@ -60,6 +61,7 @@ countro cr a.txt b.txt c.txt
 ```bash
 countro delete a.txt b.txt c.txt
 # alias
+```bash
 countro dl a.txt b.txt c.txt
 ```
 
