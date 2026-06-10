@@ -1,197 +1,20 @@
 #!/usr/bin/env node
-const fs = require("fs");
+
 const { Command } = require("commander");
-const chalk = require("chalk");
+
+const fileCommands = require("./commands/fileCommands");
+const directoryCommands = require("./commands/directoryCommands");
+const contentCommands = require("./commands/contentCommands");
 
 const program = new Command();
 
 program
-    .name("countro")
-    .description("CLI for file-based tasks")
-    .version("1.1.0");
+  .name("countro")
+  .description("CLI for file-based tasks")
+  .version("1.1.0");
 
-
-// Create
-program
-    .command("create")
-    .alias("cr")
-    .description("Create a new file")
-    .argument("<file...>", "file to create")
-    .action((files) => {
-        files.forEach((fileName) => {
-        if (fs.existsSync(fileName)) {
-            console.log(chalk.yellow(`File ${fileName} already exists`));
-            return;
-        }
-
-        fs.writeFile(fileName, "", (err) => {
-            if (err) {
-                console.error(chalk.red("Error:", err.message));
-                return;
-            }
-            console.log("\n" + chalk.green(`✔ File ${fileName} created`) + "\n");
-        });
-        });
-    });
-
-
-// Delete
-program
-    .command("delete")
-    .alias("dl")
-    .description("Delete an existing file")
-    .argument("<file...>", "file to delete")
-    .action((files) => {
-        files.forEach((fileName) => {
-        if (!fs.existsSync(fileName)) {
-            console.log(chalk.yellow(`File ${fileName} does not exist`));
-            return;
-        }
-
-        fs.unlink(fileName, (err) => {
-            if (err) {
-                console.error(chalk.red("Error:", err.message));
-                return;
-            }
-            console.log("\n" + chalk.green(`✔ File ${fileName} deleted`) + "\n");
-        });
-        });
-    });
-
-
-//Count words
-program
-    .command("count-words")
-    .alias("cw")
-    .description("Count number of words in a file")
-    .argument("<file>", "file to count")
-    .action((fileName) => {
-        fs.readFile(fileName, "utf-8", (err, data) => {
-            if (err) {
-                console.error(chalk.red("Error:", err.message));
-                return;
-            }
-
-            const words =
-                data.trim() === ""
-                    ? 0
-                    : data.trim().split(/\s+/).length;
-
-            console.log(`File: ${fileName}`);
-            console.log(`Words: ${words}`);
-        });
-    });
-
-
-// Count lines
-program
-    .command("count-lines")
-    .alias("cl")
-    .description("Count number of lines in a file")
-    .argument("<file>", "file to count")
-    .action((fileName) => {
-        fs.readFile(fileName, "utf-8", (err, data) => {
-            if (err) {
-                console.error(chalk.red("Error:", err.message));
-                return;
-            }
-
-            const lines =
-                data.trim() === ""
-                    ? 0
-                    : data.trim().split("\n").length;
-
-            console.log(`File: ${fileName}`);
-            console.log(`Lines: ${lines}`);
-        });
-    });
-
-
-// Show content
-program
-    .command("show")
-    .alias("sh")
-    .description("Show file content")
-    .argument("<file>", "file to display")
-    .action((fileName) => {
-        fs.readFile(fileName, "utf-8", (err, data) => {
-            if (err) {
-                console.error(chalk.red("Error:", err.message));
-                return;
-            }
-            console.log(data);
-        });
-    });
-
-
-// Append content
-program
-    .command("add")
-    .description("Append text to a file")
-    .argument("<file>", "file to append to")
-    .argument("<text...>", "text to append")
-    .action((fileName, text) => {
-        const finalText = text.join(" ");
-
-        fs.appendFile(fileName, finalText + "\n", (err) => {
-            if (err) {
-                console.error(chalk.red("Error:", err.message));
-                return;
-            }
-            console.log(chalk.green(`Added to ${fileName}: "${finalText}"`));
-        });
-    });
-
-// Create directories(folders)
-program
-    .command("create-dir")
-    .alias("crdir")
-    .description("Create a new directory")
-    .argument("<dirs...>", "directories to create")
-    .action((dirs) => {
-        dirs.forEach((dirName) => {
-            if (fs.existsSync(dirName)) {
-                console.log(chalk.yellow(`Directory ${dirName} already exists`));
-                return;
-            }
-
-            fs.mkdir(dirName, { recursive: true }, (err) => {
-                if (err) {
-                    console.error(chalk.red("Error:", err.message));
-                    return;
-                }
-
-                console.log(
-                    chalk.green(`✔ Directory ${dirName} created`)
-                );
-            });
-        });
-    });
-
-// Delete directories
-program
-    .command("delete-dir")
-    .alias("dldir")
-    .description("Delete an existing directory")
-    .argument("<dirs...>", "directories to delete")
-    .action((dirs) => {
-        dirs.forEach((dirName) => {
-            if (!fs.existsSync(dirName)) {
-                console.log(chalk.yellow(`Directory ${dirName} does not exist`));
-                return;
-            }
-
-            fs.rm(dirName, { recursive: true, force: true }, (err) => {
-                if (err) {
-                    console.error(chalk.red("Error:", err.message));
-                    return;
-                }
-
-                console.log(
-                    chalk.green(`✔ Directory ${dirName} deleted`)
-                );
-            });
-        });
-    });
+fileCommands(program);
+directoryCommands(program);
+contentCommands(program);
 
 program.parse();
