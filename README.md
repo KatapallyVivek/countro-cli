@@ -5,19 +5,25 @@
 ![CLI Tool](https://img.shields.io/badge/CLI-Tool-orange)
 ![Status](https://img.shields.io/badge/status-active-success)
 
-A lightweight Node.js CLI tool for file operations including create, read, append, delete, and word/line counting.
+A lightweight Node.js CLI tool that helps developers perform common file and directory operations directly from the terminal.
 
 ---
+## Problem
+Learning Linux and terminal commands can be hard for beginners. Even simple tasks like creating files or folders require remembering different commands.
+This can make learning the command line feel confusing.
+
+## Solution
+Countro CLI makes common file and folder tasks easy with simple commands.
+
+It works in Command Prompt and PowerShell, so there is no need to install Linux to get started.
+
+With Countro, beginners can practice using the terminal, learn command-line basics, and build confidence before moving to Linux or more advanced CLI tools.
 
 ##  Features
 
--  Create files
--  Delete files
--  Show file content
--  Append text to files
--  Count words
--  Count lines
-
+-  CRUD Operations on files and directories
+-  List files and directories
+-  copy and move files and directories
 ---
 
 ##  Installation
@@ -32,49 +38,31 @@ npm i -g countro
 ```
 ---
 
-## Usage (Few commands)
+## Sample commands
 ### Create a file
 ```bash
 countro create file.txt
 # alias
 countro cr file.txt
 ```
-
-### delete a file
+### Create a directory
 ```bash
-countro delete file.txt
-# alias
-countro dl file.txt
+countro create-dir components
+#alias
+countro crdir components
 ```
-
-## Multiple File Support
-
-### Create multiple files:
+### List all the files and directories 
 ```bash
-countro create a.txt b.txt c.txt
-# alias
-countro cr a.txt b.txt c.txt
+countro list
+#alias
+countro ls
 ```
-
-### Delete multiple files:
+### Get Structure
 ```bash
-countro delete a.txt b.txt c.txt
-# alias
-countro dl a.txt b.txt c.txt
+countro tree
+#alias
+countro tr
 ```
-
-### Append text
-```bash
-countro add file.txt "Hello world from CLI"
-```
-
-### Show file content
-```bash
-countro show file.txt
-# alias
-countro sh file.txt
-```
-
 ### For all commands, help and version. run 
 ```bash
 countro --help or countro -h
@@ -86,11 +74,6 @@ countro -V
 - Commander
 
 ---
-
-## Demo img
-![CLI Demo](assets/img_1.png)
-![CLI Demo](assets/img_2.png)
-![CLI Demo](assets/img_3.png)
 
 ## Contributing
 
