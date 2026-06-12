@@ -25,7 +25,9 @@ With Countro, beginners can practice using the terminal, learn command-line basi
 -  List files and directories
 -  copy and move files and directories
 ---
-
+## Demo video
+[▶️ Watch the demo video](https://drive.google.com/file/d/19VFY_pV876fRTzGqXUE3vU-fnaJ8m92C/view?usp=drive_link)
+---
 ##  Installation
 
 ### Install globally using npm:
